@@ -1,13 +1,20 @@
 const express = require("express");
-const app = express();
-const PORT = process.env.PORT || 3001;
+const server = express();
+const bodyParser = require("body-parser");
 
-app.use(express.json());
+const runServer = async () => {
+  console.log("Server starting");
 
-app.get("/", (req, res) => {
-  res.send("Hello from the server!");
-});
+  await require("./db").dbConnect();
 
-app.listen(PORT, () => {
-  console.log("Server is listening on port:", PORT);
-});
+  server.use(bodyParser.json());
+  server.use("/api/projects", require("./routes/projects"));
+
+  const PORT = parseInt(process.env.PORT, 10) || 3001;
+  server.listen(PORT, (err) => {
+    if (err) console.error(err);
+    else console.log("Server ready on port:", PORT);
+  });
+};
+
+runServer();
