@@ -8,6 +8,11 @@ const runServer = async () => {
   await require("./db").dbConnect();
 
   server.use(bodyParser.json());
+
+  server.get("/", (req, res) => {
+    res.send("Thomas Dumez | Full Stack Web Developer : API is ON");
+  });
+
   server.use("/api/projects", require("./routes/projects"));
 
   const PORT = parseInt(process.env.PORT, 10) || 3001;
