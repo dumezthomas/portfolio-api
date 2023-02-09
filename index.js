@@ -9,8 +9,8 @@ const runServer = async () => {
 
   server.use(bodyParser.json());
 
-  server.get("/", (req, res) => {
-    res.send("Thomas Dumez | Full Stack Web Developer : API is ON");
+  server.get("", (req, res) => {
+    res.sendFile("index.html", { root: __dirname });
   });
 
   server.use("/api/projects", require("./routes/projects"));
