@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
-const DataModel = mongoose.model("Project");
+const DataModel = mongoose.model("Skill");
 
 exports.getAll = async (req, res) => {
   try {
-    const data = await DataModel.find({}).populate("technologies");
+    const data = await DataModel.find({});
     return res.json(data);
   } catch (error) {
     return res.status(422).send(error.message);
@@ -12,7 +12,7 @@ exports.getAll = async (req, res) => {
 
 exports.getById = async (req, res) => {
   try {
-    const data = await DataModel.findById(req.params.id).populate("technologies");
+    const data = await DataModel.findById(req.params.id);
     return res.json(data);
   } catch (error) {
     return res.status(422).send(error.message);

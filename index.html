@@ -7,6 +7,50 @@
     <title>Thomas Dumez | Full Stack Web Developer [API]</title>
   </head>
   <body>
-    <h1>Hello, Welcome in Thomas Dumez's Portfolio [API]</h1>
+    <h1>Hello, Welcome in Thomas Dumez's Portfolio [REST API]</h1>
+    <p><b>Endpoints:</b></p>
+    <ul>
+      <li>
+        <p><a href="/api/projects/">Projects:</a></p>
+        <ul>
+          <li>
+            <p>/api/projects/</p>
+            <ul>
+              <li>GET</li>
+              <li>POST *</li>
+            </ul>
+          </li>
+          <li>
+            <p>/api/projects/[id]</p>
+            <ul>
+              <li>GET</li>
+              <li>PATCH *</li>
+              <li>DELETE *</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p><a href="/api/skills/">Skills:</a></p>
+        <ul>
+          <li>
+            <p>/api/skills/</p>
+            <ul>
+              <li>GET</li>
+              <li>POST *</li>
+            </ul>
+          </li>
+          <li>
+            <p>/api/skills/[id]</p>
+            <ul>
+              <li>GET</li>
+              <li>PATCH *</li>
+              <li>DELETE *</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <em>*: Admin users only</em>
   </body>
 </html>

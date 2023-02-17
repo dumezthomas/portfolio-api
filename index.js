@@ -13,6 +13,7 @@ const runServer = async () => {
     res.sendFile("index.html", { root: __dirname });
   });
 
+  server.use("/api/skills", require("./routes/skills"));
   server.use("/api/projects", require("./routes/projects"));
 
   const PORT = parseInt(process.env.PORT, 10) || 3001;
