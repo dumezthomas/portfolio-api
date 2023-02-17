@@ -7,6 +7,7 @@
 
 - [Technologies Used](#technologies-used)
 - [Features](#features)
+- [Endpoints](#endpoints)
 - [Setup](#setup)
 - [Project Status](#project-status)
 - [Acknowledgements](#acknowledgements)
@@ -20,8 +21,29 @@
 
 ## Features
 
-- REST API allowing to get, add, edit or remove projects
-- Only admin users are allowed to add, edit or remove a project
+- REST API allowing to get, add, edit or remove projects / skills
+- Only admin users are allowed to add, edit or remove a project / skills
+
+## Endpoints
+
+- [Projects:](https://portfolio-api.dumezthomas.dev/api/projects/)
+  - /api/projects/
+    - GET
+    - POST *
+  - /api/projects/[id]
+    - GET
+    - PATCH *
+    - DELETE *
+- [Skills:](https://portfolio-api.dumezthomas.dev/api/skills/)
+  - /api/skills/
+    - GET
+    - POST *
+  - /api/skills/[id]
+    - GET
+    - PATCH *
+    - DELETE *
+
+_*: Admin users only_
 
 ## Setup
 
@@ -37,7 +59,7 @@ Run the development server:
 npm run dev
 ```
 
-Open [http://localhost:3001/api/projects](http://localhost:3001/api/projects) with your browser to see the result.
+Open [http://localhost:3001/](http://localhost:3001/) with your browser to see the result.
 
 ## Project Status
 
